@@ -7,8 +7,7 @@ import {
   Building2, Utensils, Factory, Clock, Download, Laptop, Smartphone,
   Coffee, Beer, ShoppingBag, Palmtree, Printer, Wifi, Tablet, ArrowUpRight,
   CreditCard, BarChart3, Cloud, Layers, Ticket, Gift, Globe, Heart, Tv, Wrench, Box,
-  ChevronLeft, Smile, ThumbsUp, LifeBuoy, Lightbulb, Lock, Activity, Badge,
-  Database, Layout, SmartphoneNfc, Receipt, ChevronDown, ChevronUp
+  ChevronLeft, Smile, ThumbsUp, LifeBuoy, Lightbulb, Lock, Activity, Badge
 } from 'lucide-react';
 import { NavItem, SoftwareSolution, HardwareItem } from './types';
 
@@ -17,6 +16,7 @@ import { NavItem, SoftwareSolution, HardwareItem } from './types';
 const COMPANY_ADDRESS = "Unit 2 Tregrehan Workshops, Tregrehan, St Austell, Cornwall, PL25 3TQ";
 const COMPANY_PHONE = "01872 123 456";
 const COMPANY_EMAIL = "sales@cornwallscales.co.uk";
+const LOGO_URL = "https://pplx-res.cloudinary.com/image/upload/v1739818828/user_uploads/hldnlywlv/image.jpg";
 
 const NAV_ITEMS: NavItem[] = [
   { label: 'Home', path: '/' },
@@ -28,23 +28,16 @@ const NAV_ITEMS: NavItem[] = [
 
 const SOFTWARE_SOLUTIONS: SoftwareSolution[] = [
   {
-    id: 'lightspeed',
-    name: 'Lightspeed',
-    tagline: 'The One-Stop Commerce Platform',
-    description: 'Ignite your business with Lightspeed. A unified POS and payments platform that powers the worlds best businesses. Simplify operations and scale your revenue with the newest technology in the industry.',
-    logoText: 'Lightspeed',
-    themeColor: '#E81C1C',
-    isNew: true,
-    websiteUrl: 'https://www.lightspeedhq.co.uk/',
-    logoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Lightspeed_POS_logo.svg/2560px-Lightspeed_POS_logo.svg.png',
-    interfaceImage: 'https://images.unsplash.com/photo-1556742044-3c52d6e88c62?q=80&w=800&auto=format&fit=crop',
+    id: 'icrtouch',
+    name: 'ICRTouch',
+    tagline: 'The UK’s Leading EPoS Software Ecosystem',
+    description: 'ICRTouch is the gold standard for hospitality and retail businesses. With over 150,000 installs nationwide, it offers a complete ecosystem ranging from the robust TouchPoint till software to PocketTouch for tableside ordering and TouchOffice Web for cloud-based management.',
+    logoText: 'ICRTouch',
+    color: 'bg-blue-600',
     features: [
-      { title: 'Cloud-Based Power', description: 'Access your business data from anywhere, on any device, at any time.', icon: Cloud },
-      { title: 'Advanced Inventory', description: 'Detailed stock tracking with variant matrixes for complex retail needs.', icon: Box },
-      { title: 'Global Platform', description: 'Join thousands of merchants growing with Lightspeed worldwide.', icon: Globe },
-      { title: 'Multi-Location', description: 'Manage multiple venues from a single dashboard with ease.', icon: Building2 },
-      { title: 'Integrated Payments', description: 'Fast, secure transactions fully embedded in the POS workflow.', icon: CreditCard },
-      { title: 'Detailed Analytics', description: 'Deep dive into sales performance with granular reporting tools.', icon: BarChart3 },
+      { title: 'TouchPoint', description: 'Effortless, reliable till software that keeps working even when the internet goes down.', icon: Monitor },
+      { title: 'TouchOffice Web', description: 'Real-time cloud analytics to track sales, stock, and staff performance from anywhere.', icon: Server },
+      { title: 'PocketTouch', description: 'Streamline service with handheld ordering directly to the kitchen.', icon: Smartphone },
     ]
   },
   {
@@ -53,17 +46,11 @@ const SOFTWARE_SOLUTIONS: SoftwareSolution[] = [
     tagline: 'Hospitality-First Cloud Solutions',
     description: 'Access EPOS provides a powerful, cloud-native solution designed to drive speed of service and customer loyalty. Perfect for pubs, bars, and restaurants looking to scale with data-driven insights.',
     logoText: 'Access',
-    themeColor: '#E5173F',
-    websiteUrl: 'https://www.theaccessgroup.com/en-gb/hospitality/epos/',
-    logoUrl: 'https://www.theaccessgroup.com/media/2595/access-logo-new-1.svg',
-    interfaceImage: 'https://images.unsplash.com/photo-1556740758-90de374c12ad?q=80&w=800&auto=format&fit=crop',
+    color: 'bg-indigo-600',
     features: [
       { title: 'Speed of Service', description: 'Optimized workflows to reduce clicks and serve customers faster during peak hours.', icon: Zap },
       { title: 'Stock Management', description: 'Integrated inventory control to minimize waste and maximize margin.', icon: Box },
       { title: 'Kitchen Display', description: 'Seamless link between front-of-house and kitchen teams.', icon: Monitor },
-      { title: 'Table Management', description: 'Graphical floor plans with real-time status updates.', icon: Layout },
-      { title: 'Mobile Ordering', description: 'Order & Pay at Table solutions to increase revenue per head.', icon: Smartphone },
-      { title: 'Reservations', description: 'Integrated booking system to manage covers efficiently.', icon: Clock },
     ]
   },
   {
@@ -72,42 +59,26 @@ const SOFTWARE_SOLUTIONS: SoftwareSolution[] = [
     tagline: 'Flexible, Affordable, Intuitive',
     description: 'MyEpos offers a highly customizable interface that is easy to learn and simple to use. Suitable for both retail and hospitality, it bridges the gap between complex enterprise systems and simple cash registers.',
     logoText: 'MyEpos',
-    themeColor: '#25AAE1',
-    websiteUrl: 'https://myepos.com/',
-    logoUrl: 'https://myepos.com/wp-content/uploads/2020/09/MyEPOS-Logo-1.png',
-    interfaceImage: 'https://images.unsplash.com/photo-1629904869392-ae2a682d4d01?q=80&w=800&auto=format&fit=crop',
+    color: 'bg-emerald-600',
     features: [
-      { title: 'MyEPOS Touch', description: 'Intuitive touch screen interface designed for speed.', icon: Monitor },
-      { title: 'MyEPOS Order', description: 'Integrated online and mobile ordering.', icon: Smartphone },
-      { title: 'Kitchen Video', description: 'Digital kitchen management system.', icon: Tv },
-      { title: 'The OrderPad', description: 'Mobile tableside ordering for staff.', icon: Tablet },
-      { title: 'E-Commerce', description: 'Connect your till to your online store.', icon: ShoppingCart },
-      { title: 'The Back Office', description: 'Local management and reporting.', icon: Server },
-      { title: 'Cloud Back Office', description: 'Remote management from anywhere.', icon: Cloud },
+      { title: 'Customizable UI', description: 'Design the till layout exactly how your staff needs it.', icon: Settings },
+      { title: 'Retail & Hospitality', description: 'Versatile modes for scanning barcodes or managing table plans.', icon: Users },
+      { title: 'Loyalty Built-in', description: 'Simple customer retention tools included out of the box.', icon: Star },
     ]
   },
   {
-    id: 'icrtouch',
-    name: 'ICRTouch',
-    tagline: 'The UK’s Leading EPoS Software Ecosystem',
-    description: 'ICRTouch is the gold standard for hospitality and retail businesses. With over 150,000 installs nationwide, it offers a complete ecosystem ranging from the robust TouchPoint till software to PocketTouch for tableside ordering and TouchOffice Web for cloud-based management.',
-    logoText: 'ICRTouch',
-    themeColor: '#FF6720',
-    websiteUrl: 'https://icrtouch.com/',
-    logoUrl: 'https://icrtouch.com/wp-content/uploads/2021/08/icrtouch-logo.svg',
-    interfaceImage: 'https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?q=80&w=800&auto=format&fit=crop',
+    id: 'lightspeed',
+    name: 'Lightspeed',
+    tagline: 'The One-Stop Commerce Platform',
+    description: 'Ignite your business with Lightspeed. A unified POS and payments platform that powers the worlds best businesses. Simplify operations and scale your revenue.',
+    logoText: 'Lightspeed',
+    color: 'bg-red-600',
     features: [
-      { title: 'TouchPoint', description: 'Bespoke EPoS software.', icon: Monitor },
-      { title: 'TouchPoint Lite', description: 'Lightweight EPoS for simpler needs.', icon: Zap },
-      { title: 'PocketTouch', description: 'Digital Order Taking at the table.', icon: Smartphone },
-      { title: 'TouchKitchen', description: 'Kitchen Management screens.', icon: Tv },
-      { title: 'TouchTakeaway', description: 'Fast Food Ordering & Delivery.', icon: ShoppingBag },
-      { title: 'TouchOffice Web', description: 'Cloud Business Management.', icon: Cloud },
-      { title: 'ByTable', description: 'Order-To-Table Solution.', icon: SmartphoneNfc },
-      { title: 'TouchReservation', description: 'Online Reservations system.', icon: Clock },
-      { title: 'SelfService', description: 'Kiosk Ordering.', icon: Monitor },
-      { title: 'TouchStock', description: 'Mobile Stock Management.', icon: Box },
-    ]
+      { title: 'Cloud-Based', description: 'Access your business data from anywhere, on any device.', icon: Cloud },
+      { title: 'Advanced Inventory', description: 'Detailed stock tracking with variant matrixes for retail.', icon: Box },
+      { title: 'Global Platform', description: 'Join thousands of merchants growing with Lightspeed.', icon: Globe },
+    ],
+    isNew: true
   }
 ];
 
@@ -173,24 +144,22 @@ const HARDWARE_ITEMS: HardwareItem[] = [
 // --- Reusable Logo Component ---
 const BrandLogo = ({ className = "" }: { className?: string }) => (
   <div className={`flex items-center gap-3 ${className}`}>
-    <div className="relative w-11 h-11 bg-[#ed1f42] flex items-center justify-center shrink-0 shadow-sm">
-       <ArrowUpRight className="text-white" size={32} strokeWidth={3} />
-    </div>
-    <div className="flex flex-col justify-center h-12">
-      <span className="font-black text-3xl leading-none tracking-tighter text-slate-900">CSE</span>
-      <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-900 leading-tight">EPOS solutions</span>
-    </div>
+    <img 
+      src={LOGO_URL} 
+      alt="CSE Logo" 
+      className="h-14 w-auto object-contain" 
+    />
   </div>
 );
 
 const BrandLogoLight = ({ className = "" }: { className?: string }) => (
   <div className={`flex items-center gap-3 ${className}`}>
-    <div className="relative w-11 h-11 bg-[#ed1f42] flex items-center justify-center shrink-0 shadow-sm">
-       <ArrowUpRight className="text-white" size={32} strokeWidth={3} />
-    </div>
-    <div className="flex flex-col justify-center h-12">
-      <span className="font-black text-3xl leading-none tracking-tighter text-white">CSE</span>
-      <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/90 leading-tight">EPOS solutions</span>
+    <div className="bg-white p-2 rounded-lg">
+      <img 
+        src={LOGO_URL} 
+        alt="CSE Logo" 
+        className="h-10 w-auto object-contain" 
+      />
     </div>
   </div>
 );
@@ -689,20 +658,214 @@ const HomePage: React.FC = () => {
   );
 };
 
+const AboutPage: React.FC = () => {
+  return (
+    <div className="bg-white min-h-screen">
+      <div className="bg-slate-900 text-white py-24">
+        <div className="container mx-auto px-4 text-center">
+          <div className="inline-block bg-brand-600 text-white text-xs font-black uppercase tracking-widest px-4 py-2 rounded-full mb-6">
+              Est. 1975
+          </div>
+          <h1 className="text-5xl md:text-7xl font-black mb-8">Serving the South West</h1>
+          <p className="text-xl text-slate-300 max-w-4xl mx-auto font-light leading-relaxed">
+            Established in 1975 and covering all of Cornwall, Devon and the South West, we are experts in the installation and support of global leading EPOS solutions for retail and hospitality.
+          </p>
+        </div>
+      </div>
+
+      <div className="bg-white text-slate-900 py-24 border-b border-slate-100">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+             <div>
+                <h2 className="text-4xl font-bold mb-6">Our Evolution</h2>
+                <div className="space-y-6 text-slate-600 text-lg leading-relaxed">
+                   <p>
+                     Since 1975, CSE has transitioned into a leading technology partner for the region's hospitality and retail sectors. While our heritage is in weighing and cash registers, our present and future is digital.
+                   </p>
+                   <p>
+                     We specialize in deploying sophisticated EPOS networks that do more than just take payments. Our systems integrate stock management, kitchen video displays, mobile ordering, and cloud analytics.
+                   </p>
+                </div>
+             </div>
+             <div className="grid grid-cols-2 gap-4">
+                <div className="bg-slate-50 p-8 rounded-2xl border border-slate-100">
+                   <div className="text-4xl font-black text-brand-500 mb-2">50+</div>
+                   <div className="text-sm font-bold uppercase tracking-widest text-slate-400">Years in Business</div>
+                </div>
+                <div className="bg-slate-50 p-8 rounded-2xl border border-slate-100">
+                   <div className="text-4xl font-black text-blue-500 mb-2">100s</div>
+                   <div className="text-sm font-bold uppercase tracking-widest text-slate-400">Happy Clients</div>
+                </div>
+                <div className="bg-slate-50 p-8 rounded-2xl border border-slate-100">
+                   <div className="text-4xl font-black text-purple-500 mb-2">7 Days</div>
+                   <div className="text-sm font-bold uppercase tracking-widest text-slate-400">Support Coverage</div>
+                </div>
+                <div className="bg-slate-50 p-8 rounded-2xl border border-slate-100">
+                   <div className="text-4xl font-black text-green-500 mb-2">South West</div>
+                   <div className="text-sm font-bold uppercase tracking-widest text-slate-400">Region Covered</div>
+                </div>
+             </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Our Approach Section */}
+      <div className="bg-white py-24 border-b border-slate-100">
+        <div className="container mx-auto px-4">
+           <div className="flex flex-col lg:flex-row items-center gap-16">
+              <div className="lg:w-1/2">
+                <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+                   <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=800&auto=format&fit=crop" alt="Team meeting" className="w-full h-full object-cover" />
+                   <div className="absolute inset-0 bg-brand-600/10 mix-blend-multiply"></div>
+                </div>
+              </div>
+              <div className="lg:w-1/2">
+                <h2 className="text-4xl font-black text-slate-900 mb-6">Our Approach</h2>
+                <div className="space-y-6 text-lg text-slate-600 leading-relaxed">
+                  <p>
+                    We recognise that every business is different and our aim is to provide a solution that fits around your business needs. 
+                  </p>
+                  <p className="font-medium text-slate-800">
+                    We don't use off-the-shelf templates for building your EPOS system.
+                  </p>
+                  <p>
+                     Instead, we work to understand every aspect of the project requirements and ensure that the solution we provide meets them all. From the initial consultation to the final installation and staff training, our process is tailored entirely to you.
+                  </p>
+                </div>
+              </div>
+           </div>
+        </div>
+      </div>
+
+       {/* Our Philosophy Bento Grid */}
+       <div className="bg-slate-50 py-24">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+             <h2 className="text-4xl font-bold text-slate-900 mb-4">Our Philosophy</h2>
+             <p className="text-slate-500 max-w-2xl mx-auto">We don't just sell boxes; we build long-term relationships through expert service.</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+             
+             {/* Card 1 */}
+             <div className="bg-white p-8 rounded-[2rem] border border-slate-100 shadow-sm hover:shadow-xl transition-all">
+                <div className="w-14 h-14 bg-red-50 text-brand-500 rounded-2xl flex items-center justify-center mb-6">
+                   <Smile size={28} />
+                </div>
+                <h3 className="text-xl font-bold text-slate-900 mb-3">We’re only happy, when you’re happy</h3>
+                <p className="text-slate-600">At CSE, we are passionate about achieving real results and we pride ourselves on delivering top class service each and every time.</p>
+             </div>
+
+             {/* Card 2 */}
+             <div className="bg-white p-8 rounded-[2rem] border border-slate-100 shadow-sm hover:shadow-xl transition-all">
+                <div className="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mb-6">
+                   <Star size={28} />
+                </div>
+                <h3 className="text-xl font-bold text-slate-900 mb-3">Experience to back it up</h3>
+                <p className="text-slate-600">Providing support since 1975. We have been around the block a few times and know a thing or two about successful retail and hospitality.</p>
+             </div>
+
+             {/* Card 3 */}
+             <div className="bg-white p-8 rounded-[2rem] border border-slate-100 shadow-sm hover:shadow-xl transition-all">
+                <div className="w-14 h-14 bg-purple-50 text-purple-600 rounded-2xl flex items-center justify-center mb-6">
+                   <ThumbsUp size={28} />
+                </div>
+                <h3 className="text-xl font-bold text-slate-900 mb-3">We value our partnerships</h3>
+                <p className="text-slate-600">For us, it is not just about the capabilities of the top-class technology we provide – it is also about the experience we provide. We want to become part of your team.</p>
+             </div>
+
+             {/* Card 4 */}
+             <div className="bg-white p-8 rounded-[2rem] border border-slate-100 shadow-sm hover:shadow-xl transition-all">
+                <div className="w-14 h-14 bg-green-50 text-green-600 rounded-2xl flex items-center justify-center mb-6">
+                   <Settings size={28} />
+                </div>
+                <h3 className="text-xl font-bold text-slate-900 mb-3">We make EPOS Simple</h3>
+                <p className="text-slate-600">We understand that your system should never get in the way. From menu programming to system configuration. Have a query? We are just a call away.</p>
+             </div>
+
+             {/* Card 5 */}
+             <div className="bg-white p-8 rounded-[2rem] border border-slate-100 shadow-sm hover:shadow-xl transition-all">
+                <div className="w-14 h-14 bg-orange-50 text-orange-600 rounded-2xl flex items-center justify-center mb-6">
+                   <Lightbulb size={28} />
+                </div>
+                <h3 className="text-xl font-bold text-slate-900 mb-3">Trusted advice & solutions</h3>
+                <p className="text-slate-600">Support engineers are on hand for when you need that extra knowledge. Whether you are looking to upgrade terminals or on the hunt for the latest tech. We can help!</p>
+             </div>
+
+             {/* Card 6 */}
+             <div className="bg-white p-8 rounded-[2rem] border border-slate-100 shadow-sm hover:shadow-xl transition-all">
+                <div className="w-14 h-14 bg-cyan-50 text-cyan-600 rounded-2xl flex items-center justify-center mb-6">
+                   <LifeBuoy size={28} />
+                </div>
+                <h3 className="text-xl font-bold text-slate-900 mb-3">Dedicated Support Desk</h3>
+                <p className="text-slate-600">At CSE, we have a dedicated helpdesk that you can call or email should you have a support related query.</p>
+             </div>
+
+          </div>
+        </div>
+      </div>
+
+      {/* Why Choose CSE Section */}
+      <div className="container mx-auto px-4 py-24">
+        <div className="bg-slate-900 rounded-[3rem] p-12 md:p-20 text-white">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4">Why Businesses Choose CSE</h2>
+            <p className="text-slate-400 max-w-2xl mx-auto text-lg">Local expertise, global technology.</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+            {[
+              { 
+                icon: MapPin, 
+                title: "Truly Local", 
+                desc: "Based in St Austell. When you call us, an engineer who knows your system is on the end of the phone." 
+              },
+              { 
+                icon: ShieldCheck, 
+                title: "Certified Expertise", 
+                desc: "Experts in both cutting-edge software and hardware, ensuring your entire ecosystem works seamlessly." 
+              },
+              { 
+                icon: Clock, 
+                title: "Rapid Response", 
+                desc: "We know that every minute of downtime costs you money. We prioritize urgent system fixes to get you back up and running." 
+              }
+            ].map((v, i) => (
+              <div key={i} className="text-center group">
+                <div className="w-20 h-20 bg-white/10 shadow-xl text-brand-500 rounded-3xl flex items-center justify-center mx-auto mb-8 group-hover:scale-110 transition-transform duration-300">
+                  <v.icon size={36} />
+                </div>
+                <h3 className="text-2xl font-bold mb-4">{v.title}</h3>
+                <p className="text-slate-300 leading-relaxed">{v.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+      
+      {/* Full Width CTA - Added to About Page */}
+      <div className="container mx-auto px-4 pb-24">
+        <div className="rounded-[2rem] bg-gradient-to-br from-brand-500 to-brand-600 text-white p-12 flex flex-col md:flex-row items-center justify-between shadow-2xl shadow-brand-500/20 group relative overflow-hidden">
+           <Link to="/contact" className="absolute inset-0 z-20"></Link>
+           <div className="relative z-10 mb-6 md:mb-0">
+             <h3 className="text-3xl md:text-4xl font-black mb-3">Get in Touch Today</h3>
+             <p className="text-brand-100 text-lg max-w-xl">Are you looking for an EPOS system or ready to Upgrade? Contact us for help.</p>
+           </div>
+           <div className="relative z-10 bg-white text-brand-600 px-8 py-4 rounded-xl font-bold text-lg flex items-center shadow-lg transform group-hover:-translate-y-1 transition-transform">
+             Contact Us <ArrowRight size={20} className="ml-2" />
+           </div>
+           {/* Decorative background shapes */}
+           <div className="absolute top-0 right-0 w-96 h-96 bg-white opacity-5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+           <div className="absolute bottom-0 left-0 w-64 h-64 bg-black opacity-10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const SolutionsPage: React.FC = () => {
   const [activeTab, setActiveTab] = useState<string>(SOFTWARE_SOLUTIONS[0].id);
-  const [showAllFeatures, setShowAllFeatures] = useState<boolean>(false);
 
   const activeSolution = SOFTWARE_SOLUTIONS.find(s => s.id === activeTab) || SOFTWARE_SOLUTIONS[0];
-  
-  // Reset expansion when switching tabs
-  useEffect(() => {
-    setShowAllFeatures(false);
-  }, [activeTab]);
-
-  const displayedFeatures = showAllFeatures 
-    ? activeSolution.features 
-    : activeSolution.features.slice(0, 6);
 
   return (
     <div className="bg-white min-h-screen pt-20">
@@ -719,56 +882,38 @@ const SolutionsPage: React.FC = () => {
       <div className="container mx-auto px-4 mt-12 mb-8">
          <div className="flex flex-wrap justify-center gap-4">
             {SOFTWARE_SOLUTIONS.map(solution => (
-               <div key={solution.id} className="relative group">
-                   <button
-                     onClick={() => setActiveTab(solution.id)}
-                     style={{ 
-                       backgroundColor: activeTab === solution.id ? solution.themeColor : '#F8FAFC',
-                       color: activeTab === solution.id ? '#FFFFFF' : '#475569'
-                     }}
-                     className={`px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-300 relative overflow-hidden shadow-sm hover:shadow-md border border-transparent ${activeTab !== solution.id ? 'hover:bg-slate-100 border-slate-100' : 'shadow-xl scale-105'}`}
-                   >
-                     <span className="relative z-10">{solution.name}</span>
-                   </button>
-                   {solution.isNew && (
-                      <span className="absolute -top-3 -right-3 bg-yellow-400 text-black text-[10px] font-black px-3 py-1 rounded-full shadow-sm z-20 animate-bounce">
-                        NEW
-                      </span>
-                   )}
-               </div>
+               <button
+                 key={solution.id}
+                 onClick={() => setActiveTab(solution.id)}
+                 className={`px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-300 relative overflow-hidden group ${
+                    activeTab === solution.id 
+                    ? 'bg-brand-600 text-white shadow-xl shadow-brand-600/20 scale-105' 
+                    : 'bg-slate-50 text-slate-600 hover:bg-slate-100'
+                 }`}
+               >
+                 <span className="relative z-10">{solution.name}</span>
+                 {solution.isNew && (
+                    <span className="absolute top-0 right-0 bg-yellow-400 text-black text-[9px] font-black px-2 py-0.5 rounded-bl-lg">NEW</span>
+                 )}
+               </button>
             ))}
          </div>
       </div>
 
       {/* Tab Content */}
       <div className="container mx-auto px-4 pb-24">
-         <div className="bg-white rounded-[3rem] border border-slate-100 shadow-2xl overflow-hidden animate-fadeIn transition-all duration-500">
-            <div className="h-2 w-full" style={{ backgroundColor: activeSolution.themeColor }}></div>
+         <div className="bg-white rounded-[3rem] border border-slate-100 shadow-2xl overflow-hidden animate-fadeIn">
+            <div className={`h-3 w-full ${activeSolution.color}`}></div>
             <div className="p-8 md:p-16">
-               <div className="flex flex-col lg:flex-row gap-16 items-start">
-                  
-                  {/* Left Side: Description & Main Info */}
+               <div className="flex flex-col lg:flex-row gap-16 items-center">
                   <div className="lg:w-1/2 space-y-8">
-                     <div className="flex items-center gap-4 flex-wrap">
-                       <img 
-                          src={activeSolution.logoUrl} 
-                          alt={`${activeSolution.name} Logo`} 
-                          className="h-12 w-auto object-contain"
-                          onError={(e) => {
-                            // Fallback to text if image fails
-                            e.currentTarget.style.display = 'none';
-                            e.currentTarget.nextElementSibling?.classList.remove('hidden');
-                          }}
-                       />
-                       <div 
-                         style={{ backgroundColor: activeSolution.themeColor }}
-                         className="hidden inline-flex items-center text-white px-5 py-2 rounded-full text-sm font-bold uppercase tracking-wider shadow-lg shadow-black/5"
-                       >
+                     <div className="flex items-center gap-4">
+                       <div className={`inline-flex items-center ${activeSolution.color} text-white px-5 py-2 rounded-full text-sm font-bold uppercase tracking-wider`}>
                          {activeSolution.logoText}
                        </div>
                        {activeSolution.isNew && (
                          <div className="inline-flex items-center bg-yellow-100 text-yellow-800 border border-yellow-200 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider">
-                           New
+                           Coming Soon
                          </div>
                        )}
                      </div>
@@ -780,63 +925,30 @@ const SolutionsPage: React.FC = () => {
                         {activeSolution.description}
                      </p>
 
-                     <div className="pt-6">
-                        <a 
-                          href={activeSolution.websiteUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          style={{ backgroundColor: activeSolution.themeColor }}
-                          className="inline-flex items-center text-white px-8 py-4 rounded-xl font-bold text-lg hover:brightness-110 transition-all shadow-xl shadow-black/10"
-                        >
-                          Find Out More <ArrowUpRight className="ml-2" size={20} />
-                        </a>
+                     <div className="space-y-6 pt-4">
+                        {activeSolution.features.map((feature, idx) => (
+                           <div key={idx} className="flex items-start bg-slate-50 p-6 rounded-2xl border border-slate-100">
+                              <div className={`shrink-0 w-12 h-12 rounded-xl ${activeSolution.color} bg-opacity-10 flex items-center justify-center mr-6 text-brand-600`}>
+                                 <feature.icon className={`text-opacity-100 ${activeSolution.color.replace('bg-', 'text-')}`} size={24} />
+                              </div>
+                              <div>
+                                 <h4 className="font-bold text-slate-900 text-lg mb-1">{feature.title}</h4>
+                                 <p className="text-slate-500">{feature.description}</p>
+                              </div>
+                           </div>
+                        ))}
                      </div>
                   </div>
 
-                  {/* Right Side: Interface Preview & Features */}
-                  <div className="lg:w-1/2 w-full space-y-8">
-                     {/* Desktop Interface Preview - Smaller now */}
-                     <div className="hidden lg:block rounded-2xl overflow-hidden shadow-2xl border border-slate-200 max-w-md mx-auto">
-                        <img 
-                           src={activeSolution.interfaceImage} 
-                           alt={`${activeSolution.name} Interface`}
-                           className="w-full h-auto object-cover" 
-                        />
-                     </div>
-
-                     <div className="bg-slate-50 rounded-[2.5rem] p-8 border border-slate-100">
-                        <h3 className="text-lg font-bold text-slate-900 mb-6 uppercase tracking-wider">Key Features</h3>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            {displayedFeatures.map((feature, idx) => (
-                               <div key={idx} className="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
-                                  <div 
-                                    style={{ color: activeSolution.themeColor }}
-                                    className="mb-3"
-                                  >
-                                     <feature.icon size={28} />
-                                  </div>
-                                  <h4 className="font-bold text-slate-900 text-base mb-1">{feature.title}</h4>
-                                  <p className="text-slate-500 text-sm leading-snug">{feature.description}</p>
-                               </div>
-                            ))}
+                  <div className="lg:w-1/2 w-full">
+                     <div className={`aspect-square rounded-[3rem] ${activeSolution.color} bg-opacity-5 flex items-center justify-center relative overflow-hidden group border-4 border-white shadow-2xl`}>
+                        <div className={`absolute inset-0 ${activeSolution.color} opacity-0 group-hover:opacity-10 transition duration-700`}></div>
+                        <Monitor size={120} className={`${activeSolution.color.replace('bg-', 'text-')} opacity-20`} />
+                        <div className="absolute bottom-12 left-0 right-0 text-center px-8">
+                           <span className="text-xs font-black uppercase tracking-[0.3em] text-slate-400">Interface Preview</span>
                         </div>
-                        
-                        {activeSolution.features.length > 6 && (
-                            <button 
-                                onClick={() => setShowAllFeatures(!showAllFeatures)}
-                                style={{ color: activeSolution.themeColor }}
-                                className="w-full mt-6 flex items-center justify-center font-bold text-lg hover:underline py-2"
-                            >
-                                {showAllFeatures ? (
-                                    <>Show Less <ChevronUp className="ml-2" size={20} /></>
-                                ) : (
-                                    <>View All Features <ChevronDown className="ml-2" size={20} /></>
-                                )}
-                            </button>
-                        )}
                      </div>
                   </div>
-
                </div>
             </div>
          </div>
@@ -856,47 +968,41 @@ const SolutionsPage: React.FC = () => {
            </div>
 
            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
-              {/* Teya Card */}
-              <div className="relative bg-[#E1FB00] rounded-[2.5rem] p-10 border border-yellow-300 hover:border-black/20 transition-all duration-300 group shadow-2xl">
-                 <div className="absolute top-6 right-6 z-10">
-                     <span className="bg-black text-white text-[10px] font-black px-3 py-1 rounded-full shadow-sm animate-pulse">
-                        NEW
-                      </span>
-                 </div>
-                 <div className="flex justify-between items-center mb-10">
-                    <img src="https://teya.com/static/images/logo.svg" alt="Teya Logo" className="h-8 w-auto" />
-                    <a href="https://www.teya.com/" target="_blank" rel="noopener noreferrer" className="bg-black/5 hover:bg-black/10 p-3 rounded-full transition text-black">
-                       <ArrowUpRight size={20} />
-                    </a>
-                 </div>
-                 <ul className="space-y-4 mb-10">
-                    <li className="flex items-center text-black/80"><CheckCircle2 className="text-black mr-3 shrink-0" size={20} /> <span className="font-bold text-black mr-2">4G Backup</span> connectivity</li>
-                    <li className="flex items-center text-black/80"><CheckCircle2 className="text-black mr-3 shrink-0" size={20} /> Next Day Settlements</li>
-                    <li className="flex items-center text-black/80"><CheckCircle2 className="text-black mr-3 shrink-0" size={20} /> Pay at Counter Integration</li>
-                    <li className="flex items-center text-black/80"><Clock className="text-black mr-3 shrink-0" size={20} /> Pay at Table (Coming Soon)</li>
-                 </ul>
-                 <p className="text-black/70 text-sm leading-relaxed">
-                    Teya offers simple, fair pricing and reliable hardware designed to help small businesses thrive without complex contracts.
-                 </p>
-              </div>
-
               {/* Dojo Card */}
-              <div className="bg-[#003F33] rounded-[2.5rem] p-10 border border-[#005c4b] hover:border-white/20 transition-all duration-300 group shadow-2xl">
-                 <div className="flex justify-between items-center mb-10">
-                    {/* Dojo Logo Text SVG Placeholder since simple text works or a specific url */}
-                    <h3 className="text-4xl font-black text-white">Dojo</h3>
+              <div className="bg-slate-800 rounded-[2.5rem] p-10 border border-slate-700 hover:border-brand-500 transition-all duration-300 group">
+                 <div className="flex justify-between items-start mb-10">
+                    <h3 className="text-3xl font-black">Dojo</h3>
                     <a href="https://dojo.tech/" target="_blank" rel="noopener noreferrer" className="bg-white/10 hover:bg-white/20 p-3 rounded-full transition text-white">
                        <ArrowUpRight size={20} />
                     </a>
                  </div>
                  <ul className="space-y-4 mb-10">
-                    <li className="flex items-center text-white/80"><CheckCircle2 className="text-white mr-3 shrink-0" size={20} /> <span className="font-bold text-white mr-2">4G Backup</span> connectivity</li>
-                    <li className="flex items-center text-white/80"><CheckCircle2 className="text-white mr-3 shrink-0" size={20} /> Next Day Settlements</li>
-                    <li className="flex items-center text-white/80"><CheckCircle2 className="text-white mr-3 shrink-0" size={20} /> Pay at Counter Integration</li>
-                    <li className="flex items-center text-white/80"><CheckCircle2 className="text-white mr-3 shrink-0" size={20} /> Pay at Table</li>
+                    <li className="flex items-center text-slate-300"><CheckCircle2 className="text-brand-500 mr-3" size={20} /> <span className="font-bold text-white mr-2">4G Backup</span> connectivity</li>
+                    <li className="flex items-center text-slate-300"><CheckCircle2 className="text-brand-500 mr-3" size={20} /> Next Day Settlements</li>
+                    <li className="flex items-center text-slate-300"><CheckCircle2 className="text-brand-500 mr-3" size={20} /> Pay at Counter Integration</li>
+                    <li className="flex items-center text-slate-300"><CheckCircle2 className="text-brand-500 mr-3" size={20} /> Pay at Table</li>
                  </ul>
-                 <p className="text-white/60 text-sm leading-relaxed">
+                 <p className="text-slate-400 text-sm leading-relaxed mb-6">
                     Dojo provides intuitive card machines with lightning-fast transaction speeds and next-day transfers, ensuring your cash flow remains healthy.
+                 </p>
+              </div>
+
+              {/* Teya Card */}
+              <div className="bg-slate-800 rounded-[2.5rem] p-10 border border-slate-700 hover:border-brand-500 transition-all duration-300 group">
+                 <div className="flex justify-between items-start mb-10">
+                    <h3 className="text-3xl font-black">Teya</h3>
+                    <a href="https://www.teya.com/" target="_blank" rel="noopener noreferrer" className="bg-white/10 hover:bg-white/20 p-3 rounded-full transition text-white">
+                       <ArrowUpRight size={20} />
+                    </a>
+                 </div>
+                 <ul className="space-y-4 mb-10">
+                    <li className="flex items-center text-slate-300"><CheckCircle2 className="text-brand-500 mr-3" size={20} /> <span className="font-bold text-white mr-2">4G Backup</span> connectivity</li>
+                    <li className="flex items-center text-slate-300"><CheckCircle2 className="text-brand-500 mr-3" size={20} /> Next Day Settlements</li>
+                    <li className="flex items-center text-slate-300"><CheckCircle2 className="text-brand-500 mr-3" size={20} /> Pay at Counter Integration</li>
+                    <li className="flex items-center text-slate-300"><Clock className="text-yellow-500 mr-3" size={20} /> Pay at Table (Coming Soon)</li>
+                 </ul>
+                 <p className="text-slate-400 text-sm leading-relaxed mb-6">
+                    Teya offers simple, fair pricing and reliable hardware designed to help small businesses thrive without complex contracts.
                  </p>
               </div>
            </div>
@@ -907,96 +1013,171 @@ const SolutionsPage: React.FC = () => {
 };
 
 const HardwarePage: React.FC = () => {
-  const categories = ['Terminal', 'Peripheral', 'Accessory'] as const;
+  const [filter, setFilter] = useState<string>('All');
+  
+  const filteredItems = filter === 'All' 
+    ? HARDWARE_ITEMS 
+    : HARDWARE_ITEMS.filter(item => item.category === filter);
+
+  const categories = ['All', 'Terminal', 'Peripheral', 'Accessory'];
 
   return (
-    <div className="bg-white min-h-screen pt-20">
-      <div className="bg-slate-900 text-white py-20">
+    <div className="bg-slate-50 min-h-screen pt-20">
+      <div className="bg-white py-20 border-b border-slate-100">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-6xl font-black mb-6">Hardware Collection</h1>
-          <p className="text-xl text-slate-300 max-w-2xl mx-auto">
-            Professional grade EPOS hardware designed for reliability and speed.
+          <h1 className="text-4xl md:text-5xl font-black mb-6 text-slate-900">Professional Hardware</h1>
+          <p className="text-xl text-slate-500 max-w-2xl mx-auto mb-10">
+            Built to withstand the demands of busy hospitality and retail environments.
           </p>
+          
+          <div className="flex flex-wrap justify-center gap-2">
+            {categories.map(cat => (
+              <button
+                key={cat}
+                onClick={() => setFilter(cat)}
+                className={`px-6 py-2 rounded-full font-bold transition-all ${
+                  filter === cat 
+                    ? 'bg-brand-600 text-white shadow-lg shadow-brand-500/30' 
+                    : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                }`}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
         </div>
       </div>
-      
+
       <div className="container mx-auto px-4 py-16">
-        {categories.map(category => {
-          const items = HARDWARE_ITEMS.filter(item => item.category === category);
-          if (items.length === 0) return null;
-          
-          return (
-            <div key={category} className="mb-24">
-              <div className="flex items-center gap-4 mb-10">
-                 <h2 className="text-3xl font-black text-slate-900">{category}s</h2>
-                 <div className="h-px flex-grow bg-slate-200"></div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {filteredItems.map(item => (
+            <div key={item.id} className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all group border border-slate-100">
+              <div className="aspect-[4/3] overflow-hidden relative bg-slate-200">
+                <img 
+                  src={item.imageUrl} 
+                  alt={item.title} 
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-slate-800">
+                  {item.category}
+                </div>
               </div>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                {items.map(item => (
-                  <div key={item.id} className="group bg-white rounded-2xl border border-slate-200 overflow-hidden hover:shadow-xl hover:border-brand-200 transition-all duration-300 flex flex-col">
-                    <div className="relative h-48 overflow-hidden bg-slate-100">
-                      <img 
-                        src={item.imageUrl} 
-                        alt={item.title} 
-                        className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
-                      />
-                    </div>
-                    <div className="p-6 flex flex-col flex-grow">
-                      <h3 className="font-bold text-lg text-slate-900 mb-2">{item.title}</h3>
-                      <p className="text-sm text-slate-500 mb-4 flex-grow">{item.description}</p>
-                      <button className="w-full py-2 rounded-lg bg-slate-50 text-slate-700 font-bold text-sm hover:bg-brand-50 hover:text-brand-600 transition-colors">
-                        View Details
-                      </button>
-                    </div>
-                  </div>
-                ))}
+              <div className="p-8">
+                <h3 className="text-xl font-bold text-slate-900 mb-3">{item.title}</h3>
+                <p className="text-slate-500 leading-relaxed mb-6">{item.description}</p>
+                <Link to="/contact" className="inline-flex items-center text-brand-600 font-bold hover:text-brand-700">
+                  Enquire Now <ArrowRight size={16} className="ml-2" />
+                </Link>
               </div>
             </div>
-          );
-        })}
+          ))}
+        </div>
       </div>
     </div>
   );
 };
 
-const AboutPage: React.FC = () => (
-  <div className="pt-32 pb-20 text-center container mx-auto px-4">
-    <h1 className="text-4xl font-bold mb-4">About Us</h1>
-    <p className="text-slate-600 max-w-2xl mx-auto">
-      Founded in Cornwall, we have been providing quality EPOS solutions and local support to businesses since 2005. 
-      We believe in building long-term relationships with our clients through exceptional service.
-    </p>
-  </div>
-);
+const SupportPage: React.FC = () => {
+    return (
+        <div className="bg-white min-h-screen pt-20">
+             <div className="container mx-auto px-4 py-16">
+                 <div className="max-w-4xl mx-auto text-center mb-16">
+                     <h1 className="text-4xl font-black text-slate-900 mb-6">We're Here To Help</h1>
+                     <p className="text-xl text-slate-500">
+                         Our support team is based in Cornwall and ready to assist you.
+                     </p>
+                 </div>
 
-const SupportPage: React.FC = () => (
-  <div className="pt-32 pb-20 text-center container mx-auto px-4">
-    <h1 className="text-4xl font-bold mb-4">Support Center</h1>
-    <p className="text-slate-600 max-w-2xl mx-auto">
-      Need assistance? Our support team is available Mon-Fri 9am-5pm. 
-      For urgent enquiries, please call our support line.
-    </p>
-    <div className="mt-8 flex justify-center gap-4">
-      <button className="bg-brand-500 text-white px-6 py-3 rounded-lg font-bold">Call Support</button>
-      <button className="bg-slate-100 text-slate-900 px-6 py-3 rounded-lg font-bold">Email Us</button>
-    </div>
-  </div>
-);
+                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+                     <div className="bg-slate-50 p-10 rounded-3xl border border-slate-100 text-center">
+                         <div className="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                             <Phone size={32} />
+                         </div>
+                         <h3 className="text-2xl font-bold mb-2">Telephone Support</h3>
+                         <p className="text-slate-500 mb-6">Speak directly to an engineer.</p>
+                         <a href={`tel:${COMPANY_PHONE}`} className="text-2xl font-black text-slate-900 hover:text-brand-600 transition">
+                             {COMPANY_PHONE}
+                         </a>
+                     </div>
+                     <div className="bg-slate-50 p-10 rounded-3xl border border-slate-100 text-center">
+                         <div className="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                             <Mail size={32} />
+                         </div>
+                         <h3 className="text-2xl font-bold mb-2">Email Support</h3>
+                         <p className="text-slate-500 mb-6">Log a ticket via email.</p>
+                         <a href={`mailto:${COMPANY_EMAIL}`} className="text-2xl font-black text-slate-900 hover:text-brand-600 transition">
+                             {COMPANY_EMAIL}
+                         </a>
+                     </div>
+                 </div>
 
-const ContactPage: React.FC = () => (
-  <div className="pt-32 pb-20 text-center container mx-auto px-4">
-    <h1 className="text-4xl font-bold mb-4">Contact Us</h1>
-    <p className="text-slate-600 max-w-2xl mx-auto mb-8">
-      Ready to upgrade your system? Get in touch for a free consultation and quote.
-    </p>
-    <div className="max-w-md mx-auto bg-white p-8 rounded-2xl shadow-lg border border-slate-100 text-left">
-      <div className="space-y-4">
-        <div>
-          <label className="block text-sm font-bold text-slate-700 mb-1">Name</label>
-          <input type="text" className="w-full p-3 border border-slate-200 rounded-lg focus:ring-2 focus:ring-brand-500 outline-none" placeholder="Your Name" />
+                 <div className="bg-brand-600 rounded-3xl p-12 text-white text-center">
+                     <h2 className="text-3xl font-bold mb-4">Remote Support</h2>
+                     <p className="text-brand-100 mb-8 max-w-2xl mx-auto">
+                         Our engineers can remotely access your system to diagnose and fix issues instantly. Please call us first to obtain a support code.
+                     </p>
+                     <button className="bg-white text-brand-600 px-8 py-4 rounded-xl font-bold hover:bg-brand-50 transition">
+                         Download TeamViewer
+                     </button>
+                 </div>
+             </div>
         </div>
-        <div>
-          <label className="block text-sm font-bold text-slate-700 mb-1">Email</label>
-          <input type="email" className="w-full p-3 border border-slate-200 rounded-lg focus:ring-2 focus:ring-brand-500 outline-none" placeholder="your@email.com" />
+    );
+};
+
+const ContactPage: React.FC = () => {
+    return (
+        <div className="bg-slate-50 min-h-screen pt-20">
+            <div className="container mx-auto px-4 py-16">
+                <div className="max-w-2xl mx-auto bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden">
+                    <div className="bg-slate-900 p-8 text-center">
+                         <h1 className="text-3xl font-white text-white mb-2">Contact Us</h1>
+                         <p className="text-slate-400">Send us a message and we'll get back to you.</p>
+                    </div>
+                    <div className="p-8 md:p-12 space-y-6">
+                        <div>
+                            <label className="block text-sm font-bold text-slate-700 mb-2">Name</label>
+                            <input type="text" className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-200 outline-none transition" placeholder="Your name" />
+                        </div>
+                        <div>
+                            <label className="block text-sm font-bold text-slate-700 mb-2">Email</label>
+                            <input type="email" className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-200 outline-none transition" placeholder="your@email.com" />
+                        </div>
+                         <div>
+                            <label className="block text-sm font-bold text-slate-700 mb-2">Message</label>
+                            <textarea rows={4} className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-200 outline-none transition" placeholder="How can we help?"></textarea>
+                        </div>
+                        <button className="w-full bg-brand-600 text-white font-bold py-4 rounded-xl hover:bg-brand-700 transition">
+                            Send Message
+                        </button>
+                    </div>
+                    <div className="bg-slate-50 p-8 border-t border-slate-100 text-center text-sm text-slate-500">
+                        <p>{COMPANY_ADDRESS}</p>
+                        <p>{COMPANY_PHONE} &bull; {COMPANY_EMAIL}</p>
+                    </div>
+                </div>
+            </div>
         </div>
+    );
+};
+
+const App: React.FC = () => {
+  return (
+    <HashRouter>
+      <div className="font-sans text-slate-900 antialiased selection:bg-brand-200 selection:text-brand-900">
+        <Header />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/solutions" element={<SolutionsPage />} />
+          <Route path="/hardware" element={<HardwarePage />} />
+          <Route path="/support" element={<SupportPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+        </Routes>
+        <Footer />
+      </div>
+    </HashRouter>
+  );
+};
+
+export default App;
