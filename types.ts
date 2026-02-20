@@ -20,6 +20,8 @@ export interface SoftwareSolution {
   logoText: string;
   color: string;
   isNew?: boolean;
+  logoUrl: string;
+  websiteUrl: string;
 }
 
 export interface HardwareItem {
