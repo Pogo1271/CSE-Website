@@ -30,7 +30,7 @@ export const AboutPage: React.FC = () => {
                      Since 1975, CSE has transitioned into a leading technology partner for the region's hospitality and retail sectors. While our heritage is in weighing and cash registers, our present and future is digital.
                    </p>
                    <p>
-                     We specialize in deploying sophisticated EPOS networks that do more than just take payments. Our systems integrate stock management, kitchen video displays, mobile ordering, and cloud analytics.
+                     We specialise in deploying sophisticated EPOS networks that do more than just take payments. Our systems integrate stock management, kitchen video displays, mobile ordering, and cloud analytics.
                    </p>
                 </div>
              </div>
@@ -62,7 +62,7 @@ export const AboutPage: React.FC = () => {
            <div className="flex flex-col lg:flex-row items-center gap-16">
               <div className="lg:w-1/2">
                 <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-                   <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=800&auto=format&fit=crop" alt="Team meeting" className="w-full h-full object-cover" />
+                   <img src="/images/about/Our_Approach.png" alt="Team meeting" className="w-full h-full object-cover" />
                 </div>
               </div>
               <div className="lg:w-1/2">
@@ -72,7 +72,7 @@ export const AboutPage: React.FC = () => {
                     We recognise that every business is different and our aim is to provide a solution that fits around your business needs. 
                   </p>
                   <p className="font-medium text-black">
-                    We don't use off-the-shelf templates for building your EPOS system.
+                    What makes us unique is that we don't use off-the-shelf templates for building your EPOS system, unlike some of our competition.
                   </p>
                   <p>
                      Instead, we work to understand every aspect of the project requirements and ensure that the solution we provide meets them all. From the initial consultation to the final installation and staff training, our process is tailored entirely to you.
@@ -173,7 +173,7 @@ export const AboutPage: React.FC = () => {
               { 
                 icon: Clock, 
                 title: "Rapid Response", 
-                desc: "We know that every minute of downtime costs you money. We prioritize urgent system fixes to get you back up and running." 
+                desc: "We know that every minute of downtime costs you money. We prioritise urgent system fixes to get you back up and running." 
               }
             ].map((v, i) => (
               <div key={i} className="text-center group">

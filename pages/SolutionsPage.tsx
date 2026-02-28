@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Monitor, CheckCircle2, ArrowUpRight, Clock, Zap, Cloud, Settings, Users, ChevronDown, ChevronUp, ArrowRight } from 'lucide-react';
-import { SOFTWARE_SOLUTIONS } from '../data';
+import { SOFTWARE_SOLUTIONS, PAYMENT_PROVIDERS } from '../data';
 import { CTASection } from '../components/CTASection';
 import { Link } from 'react-router-dom';
 
@@ -63,33 +63,55 @@ export const SolutionsPage: React.FC = () => {
               
               {/* Colored Header Section */}
               <div className={`${activeSolution.color} p-10 md:p-14 text-white relative overflow-hidden transition-colors duration-500`}>
-                  <div className="relative z-10 max-w-4xl">
-                     {/* Logo Box */}
-                     <a 
-                       href={activeSolution.websiteUrl} 
-                       target="_blank" 
-                       rel="noopener noreferrer"
-                       className="bg-white p-4 rounded-2xl inline-block mb-8 shadow-lg hover:scale-105 transition-transform duration-300"
-                     >
-                        <img 
-                          src={activeSolution.logoUrl} 
-                          alt={`${activeSolution.name} Logo`} 
-                          className="h-8 md:h-12 w-auto object-contain max-w-[140px]" 
-                        />
-                     </a>
+                  <div className="relative z-10 w-full">
+                     <div className="flex flex-col md:flex-row justify-between items-center gap-8 mb-8">
+                        {/* Logo Box */}
+                        <div className="flex items-center gap-4">
+                          <div 
+                            className="bg-white p-6 rounded-3xl inline-block shadow-xl hover:scale-105 transition-transform duration-300"
+                          >
+                             <img 
+                               src={activeSolution.logoUrl} 
+                               alt={`${activeSolution.name} Logo`} 
+                               className="h-16 md:h-20 w-auto object-contain max-w-[240px]" 
+                             />
+                          </div>
+                          {activeSolution.isNew && (
+                             <div className="bg-white text-black px-4 py-2 rounded-full text-xs font-black uppercase tracking-widest shadow-lg">
+                               Coming Soon
+                             </div>
+                          )}
+                        </div>
 
-                     <div className="flex flex-col md:flex-row md:items-center gap-4 mb-4">
-                        <h2 className="text-3xl md:text-5xl font-black tracking-tight">{activeSolution.name}</h2>
-                        {activeSolution.isNew && (
-                           <div className="self-start md:self-auto bg-white text-black px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-widest shadow-lg">
-                             Coming Soon
-                           </div>
+                        {/* Partner Logo Box */}
+                        {(activeSolution.partnerLogos && activeSolution.partnerLogos.length > 0) ? (
+                          <div className="bg-white p-6 rounded-3xl inline-flex gap-6 shadow-xl hover:scale-105 transition-transform duration-300 items-center">
+                             {activeSolution.partnerLogos.map((logo, idx) => (
+                               <img 
+                                 key={idx}
+                                 src={logo} 
+                                 alt="Partner Logo" 
+                                 className="h-16 md:h-20 w-auto object-contain max-w-[180px]" 
+                               />
+                             ))}
+                          </div>
+                        ) : activeSolution.partnerLogoUrl && (
+                          <div className="bg-white p-6 rounded-3xl inline-block shadow-xl hover:scale-105 transition-transform duration-300">
+                             <img 
+                               src={activeSolution.partnerLogoUrl} 
+                               alt="Partner Logo" 
+                               className="h-16 md:h-20 w-auto object-contain max-w-[240px]" 
+                             />
+                          </div>
                         )}
                      </div>
-                     <p className="text-lg md:text-2xl font-bold mb-4 opacity-95">{activeSolution.tagline}</p>
-                     <p className="text-base md:text-lg opacity-90 leading-relaxed max-w-3xl font-medium">
-                        {activeSolution.description}
-                     </p>
+
+                     <div className="max-w-4xl">
+                        <p className="text-lg md:text-2xl font-bold mb-4 opacity-95">{activeSolution.tagline}</p>
+                        <p className="text-base md:text-lg opacity-90 leading-relaxed max-w-3xl font-medium">
+                           {activeSolution.description}
+                        </p>
+                     </div>
                   </div>
                   {/* Decorative Elements */}
                   <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-white opacity-10 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
@@ -98,15 +120,19 @@ export const SolutionsPage: React.FC = () => {
 
               {/* White Body Section with Features */}
               <div className="p-10 md:p-14 bg-white relative">
-                  <div className="flex flex-col lg:flex-row gap-16">
-                     {/* Features Grid */}
-                     <div className="flex-1">
+                  <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
+                     {/* Features Grid - Left Column */}
+                     <div className="flex-1 w-full">
                          <h3 className="text-2xl font-black text-black mb-8">Key Features</h3>
                          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             {displayedFeatures.map((feature, idx) => (
-                               <div key={idx} className="bg-offwhite p-6 rounded-2xl border border-gray-100 hover:border-brand-200 transition-all group animate-fadeIn">
-                                  <div className={`w-12 h-12 rounded-xl bg-white shadow-sm flex items-center justify-center mb-4 text-brand-500 group-hover:scale-110 transition-transform`}>
-                                     <feature.icon size={24} className={activeSolution.color.replace('bg-', 'text-')} />
+                               <div key={idx} className="bg-offwhite p-6 rounded-2xl border border-gray-100 hover:border-brand-200 transition-all group animate-fadeIn h-full">
+                                  <div className={`w-12 h-12 rounded-xl bg-white shadow-sm flex items-center justify-center mb-4 text-brand-500 group-hover:scale-110 transition-transform overflow-hidden`}>
+                                     {feature.imageUrl ? (
+                                        <img src={feature.imageUrl} alt={feature.title} className="w-full h-full object-cover" />
+                                     ) : (
+                                        feature.icon && <feature.icon size={24} className={activeSolution.color.replace('bg-', 'text-')} />
+                                     )}
                                   </div>
                                   <h4 className="font-bold text-lg text-black mb-2">{feature.title}</h4>
                                   <p className="text-gray-500 text-sm leading-relaxed">{feature.description}</p>
@@ -134,28 +160,41 @@ export const SolutionsPage: React.FC = () => {
                          )}
                      </div>
                      
-                     {/* Interface Preview Visual */}
-                     <div className="w-full lg:w-1/3 flex flex-col gap-6 lg:sticky lg:top-24 lg:self-start mt-8 lg:mt-0">
-                         <div className="bg-offwhite rounded-[2.5rem] border border-gray-100 p-8 flex flex-col items-center justify-center relative overflow-hidden h-[400px] w-full">
-                             <Monitor size={120} className="text-gray-300 mb-6 relative z-10" />
-                             <div className="text-center z-10">
-                                 <span className="text-xs font-black uppercase tracking-[0.2em] text-gray-400">Interface Preview</span>
-                             </div>
-                             <div className={`absolute inset-0 ${activeSolution.color} opacity-5`}></div>
-                             {/* Abstract UI Lines */}
-                             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full opacity-30 pointer-events-none">
-                                <div className="absolute top-[30%] left-[20%] right-[20%] h-2 bg-gray-300 rounded-full"></div>
-                                <div className="absolute top-[40%] left-[20%] right-[40%] h-2 bg-gray-300 rounded-full"></div>
-                                <div className="absolute top-[50%] left-[20%] right-[30%] h-2 bg-gray-300 rounded-full"></div>
+                     {/* Interface Preview Visual - Right Column */}
+                     <div className="w-full lg:w-[45%]">
+                         <div className="bg-offwhite rounded-[2rem] border border-gray-100 overflow-hidden shadow-lg aspect-video relative group">
+                             {activeSolution.interfaceMedia?.type === 'video' ? (
+                                <video 
+                                  src={activeSolution.interfaceMedia.url} 
+                                  autoPlay 
+                                  loop 
+                                  muted 
+                                  playsInline 
+                                  className="w-full h-full object-contain"
+                                />
+                             ) : (
+                                <div className="w-full h-full relative">
+                                   {activeSolution.interfaceMedia?.url ? (
+                                     <img 
+                                       src={activeSolution.interfaceMedia.url} 
+                                       alt="Interface Preview" 
+                                       className="w-full h-full object-contain"
+                                     />
+                                   ) : (
+                                     <div className="w-full h-full flex flex-col items-center justify-center">
+                                       <Monitor size={80} className="text-gray-300 mb-4" />
+                                       <span className="text-xs font-black uppercase tracking-[0.2em] text-gray-400">Interface Preview</span>
+                                     </div>
+                                   )}
+                                   <div className={`absolute inset-0 ${activeSolution.color} opacity-5 pointer-events-none`}></div>
+                                </div>
+                             )}
+                             
+                             {/* Overlay Label */}
+                             <div className="absolute top-4 left-4 bg-black/50 backdrop-blur-md text-white px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest z-20">
+                               Interface Preview
                              </div>
                          </div>
-                         
-                         {/* Find Out More Button (Visible when expanded) */}
-                         {isExpanded && (
-                           <Link to={`/solutions/${activeTab}`} className={`w-full mt-8 py-5 rounded-xl ${activeSolution.color} text-white font-bold text-lg text-center shadow-lg transform hover:-translate-y-1 transition-all flex items-center justify-center gap-2 animate-fadeIn`}>
-                             Find Out More <ArrowRight size={20} />
-                           </Link>
-                         )}
                      </div>
                   </div>
               </div>
@@ -178,47 +217,45 @@ export const SolutionsPage: React.FC = () => {
            </div>
 
            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
-              {/* Dojo Card */}
-              <div className="bg-offwhite rounded-[2.5rem] p-10 border border-gray-200 hover:border-brand-500 transition-all duration-300 group shadow-lg">
-                 <div className="flex justify-between items-start mb-10">
-                    <h3 className="text-3xl font-black text-black">Dojo</h3>
-                    <a href="https://dojo.tech/" target="_blank" rel="noopener noreferrer" className="bg-white hover:bg-gray-50 p-3 rounded-full transition text-black shadow-sm">
-                       <ArrowUpRight size={20} />
-                    </a>
-                 </div>
-                 <ul className="space-y-4 mb-10">
-                    <li className="flex items-center text-gray-600"><CheckCircle2 className="text-brand-500 mr-3 shrink-0" size={20} /> <span className="font-bold text-black mr-2">4G Backup</span> Connectivity</li>
-                    <li className="flex items-center text-gray-600"><CheckCircle2 className="text-brand-500 mr-3 shrink-0" size={20} /> Next Day Settlements</li>
-                    <li className="flex items-center text-gray-600"><CheckCircle2 className="text-brand-500 mr-3 shrink-0" size={20} /> Pay at Counter Integration</li>
-                    <li className="flex items-center text-gray-600"><CheckCircle2 className="text-brand-500 mr-3 shrink-0" size={20} /> Pay at Table</li>
-                    <li className="flex items-center text-gray-600"><CheckCircle2 className="text-brand-500 mr-3 shrink-0" size={20} /> Advanced Business Insights & Customer Analytics</li>
-                    <li className="flex items-center text-gray-600"><CheckCircle2 className="text-brand-500 mr-3 shrink-0" size={20} /> Built-in Tipping Support with Full Reporting</li>
-                 </ul>
-                 <p className="text-gray-500 text-sm leading-relaxed mb-6">
-                    Dojo provides intuitive card machines with lightning-fast transaction speeds and next-day transfers, ensuring your cash flow remains healthy.
-                 </p>
-              </div>
-
-              {/* Teya Card */}
-              <div className="bg-offwhite rounded-[2.5rem] p-10 border border-gray-200 hover:border-brand-500 transition-all duration-300 group shadow-lg">
-                 <div className="flex justify-between items-start mb-10">
-                    <h3 className="text-3xl font-black text-black">Teya</h3>
-                    <a href="https://www.teya.com/" target="_blank" rel="noopener noreferrer" className="bg-white hover:bg-gray-50 p-3 rounded-full transition text-black shadow-sm">
-                       <ArrowUpRight size={20} />
-                    </a>
-                 </div>
-                 <ul className="space-y-4 mb-10">
-                    <li className="flex items-center text-gray-600"><CheckCircle2 className="text-brand-500 mr-3 shrink-0" size={20} /> <span className="font-bold text-black mr-2">4G Backup</span> Connectivity</li>
-                    <li className="flex items-center text-gray-600"><CheckCircle2 className="text-brand-500 mr-3 shrink-0" size={20} /> Next Day Settlements</li>
-                    <li className="flex items-center text-gray-600"><CheckCircle2 className="text-brand-500 mr-3 shrink-0" size={20} /> Pay at Counter Integration</li>
-                    <li className="flex items-center text-gray-600"><Clock className="text-yellow-500 mr-3 shrink-0" size={20} /> Pay at Table (Coming Soon)</li>
-                    <li className="flex items-center text-gray-600"><CheckCircle2 className="text-brand-500 mr-3 shrink-0" size={20} /> Highly Competitive Pricing</li>
-                    <li className="flex items-center text-gray-600"><CheckCircle2 className="text-brand-500 mr-3 shrink-0" size={20} /> Optional Integrated Business Account</li>
-                 </ul>
-                 <p className="text-gray-500 text-sm leading-relaxed mb-6">
-                    Teya offers simple, fair pricing and reliable hardware designed to help small businesses thrive without complex contracts.
-                 </p>
-              </div>
+              {PAYMENT_PROVIDERS.map(provider => (
+                <div key={provider.id} className="bg-offwhite rounded-[2.5rem] p-10 border border-gray-200 hover:border-brand-500 transition-all duration-300 group shadow-lg">
+                   <div className="flex justify-between items-start mb-10">
+                      <div className="inline-block hover:scale-105 transition-transform duration-300">
+                         <img 
+                           src={provider.logoUrl} 
+                           alt={`${provider.name} Logo`} 
+                           className="h-16 w-auto object-contain max-w-[180px]" 
+                         />
+                      </div>
+                      <a href={provider.websiteUrl} target="_blank" rel="noopener noreferrer" className="bg-white hover:bg-gray-50 p-3 rounded-full transition text-black shadow-sm">
+                         <ArrowUpRight size={20} />
+                      </a>
+                   </div>
+                   <ul className="space-y-4 mb-10">
+                      {provider.features.map((feature, idx) => (
+                        <li key={idx} className="flex items-center text-gray-600">
+                          {feature.includes('Coming Soon') ? (
+                            <Clock className="text-yellow-500 mr-3 shrink-0" size={20} />
+                          ) : (
+                            <CheckCircle2 className="text-brand-500 mr-3 shrink-0" size={20} />
+                          )}
+                          
+                          {feature.includes('4G Backup') ? (
+                            <span>
+                              <span className="font-bold text-black mr-1">4G Backup</span>
+                              {feature.replace('4G Backup', '')}
+                            </span>
+                          ) : (
+                            feature
+                          )}
+                        </li>
+                      ))}
+                   </ul>
+                   <p className="text-gray-500 text-sm leading-relaxed mb-6">
+                      {provider.description}
+                   </p>
+                </div>
+              ))}
            </div>
         </div>
       </div>

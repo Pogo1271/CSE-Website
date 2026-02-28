@@ -14,7 +14,7 @@ export const SupportPage: React.FC = () => {
                      </div>
                      <h1 className="text-5xl md:text-7xl font-black mb-8 text-black">We're Here <span className="text-brand-500">To Help</span></h1>
                      <p className="text-xl text-gray-500 max-w-4xl mx-auto font-light leading-relaxed">
-                         Our support team is based in Cornwall and ready to assist you.
+                         Based in Cornwall, our expert support team is ready to help — no matter where you are in the world.
                      </p>
                  </div>
              </div>
@@ -61,7 +61,7 @@ export const SupportPage: React.FC = () => {
                                     Access essential drivers, manuals, software installers, and utility programs for your hardware.
                                 </p>
                                 <a 
-                                    href="https://drive.google.com/drive/folders/1rNZcXNT0BcmZZZYdlB9smJCu98giDymg" 
+                                    href="https://drive.google.com/drive/folders/1vCEJpEpaDD6-3syhonawFoxGmTHlZsqE" 
                                     target="_blank" 
                                     rel="noopener noreferrer"
                                     className="inline-block bg-blue-600 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-blue-700 transition shadow-xl shadow-blue-600/30 transform hover:-translate-y-1 w-full md:w-auto"
@@ -78,23 +78,31 @@ export const SupportPage: React.FC = () => {
 
                      {/* Contact Grid - Moved Below */}
                      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-                         <div className="bg-white p-12 rounded-[2.5rem] border border-gray-100 text-center hover:shadow-xl transition-all group">
+                         <div className="bg-white p-12 rounded-[2.5rem] border border-gray-100 text-center hover:shadow-xl transition-all group flex flex-col h-full">
                              <div className="w-20 h-20 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-8 group-hover:scale-110 transition-transform">
                                  <Phone size={36} />
                              </div>
                              <h3 className="text-2xl font-bold mb-3 text-black">Telephone Support</h3>
-                             <p className="text-gray-500 mb-8">Speak directly to an engineer during business hours.</p>
-                             <a href={`tel:${COMPANY_PHONE}`} className="text-3xl font-black text-black hover:text-brand-500 transition block">
+                             <p className="text-gray-500 mb-6">Speak directly to an engineer. When calling, please select:</p>
+                             <ul className="text-left text-sm text-gray-600 space-y-3 mb-8 bg-gray-50 p-6 rounded-2xl border border-gray-100">
+                                <li className="flex gap-3"><span className="font-bold text-brand-500 shrink-0">Option 1</span> <span>For till rolls and accessories or to leave a message</span></li>
+                                <li className="flex gap-3"><span className="font-bold text-brand-500 shrink-0">Option 2</span> <span>To speak to an engineer during normal office hours (9am-5pm)</span></li>
+                                <li className="flex gap-3"><span className="font-bold text-brand-500 shrink-0">Option 3</span> <span>For emergency out of hours support (active support contract required)</span></li>
+                             </ul>
+                             <a href={`tel:${COMPANY_PHONE}`} className="text-3xl font-black text-black hover:text-brand-500 transition block mt-auto">
                                  {COMPANY_PHONE}
                              </a>
                          </div>
-                         <div className="bg-white p-12 rounded-[2.5rem] border border-gray-100 text-center hover:shadow-xl transition-all group">
+                         <div className="bg-white p-12 rounded-[2.5rem] border border-gray-100 text-center hover:shadow-xl transition-all group flex flex-col h-full">
                              <div className="w-20 h-20 bg-green-50 text-green-600 rounded-full flex items-center justify-center mx-auto mb-8 group-hover:scale-110 transition-transform">
                                  <Mail size={36} />
                              </div>
                              <h3 className="text-2xl font-bold mb-3 text-black">Email Support</h3>
-                             <p className="text-gray-500 mb-8">Contact us via email for non urgent queries.</p>
-                             <a href={`mailto:${COMPANY_EMAIL}`} className="text-2xl font-bold text-black hover:text-brand-500 transition block break-all">
+                             <p className="text-gray-500 mb-4">Contact us via email for non-urgent queries.</p>
+                             <p className="text-left text-sm text-gray-600 bg-gray-50 p-6 rounded-2xl border border-gray-100 mb-8 my-auto">
+                                <strong className="text-brand-500">Note:</strong> Emails may not be closely monitored out of hours. If urgent, ring and select <strong className="text-brand-500">Option 3</strong> (active support contract required).
+                             </p>
+                             <a href={`mailto:${COMPANY_EMAIL}`} className="text-2xl font-bold text-black hover:text-brand-500 transition block break-all mt-auto">
                                  {COMPANY_EMAIL}
                              </a>
                          </div>

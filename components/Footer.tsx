@@ -8,7 +8,7 @@ export const Footer: React.FC = () => {
   return (
     <footer className="bg-offwhite text-slate-600 border-t border-slate-200 pt-16 pb-8">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-12">
           <div className="col-span-1 md:col-span-1">
             <div className="mb-6">
               <BrandLogo />
@@ -23,13 +23,23 @@ export const Footer: React.FC = () => {
             <ul className="space-y-3 text-sm text-slate-500">
               <li><Link to="/solutions" className="hover:text-brand-500 transition">EPOS Software</Link></li>
               <li><Link to="/hardware" className="hover:text-brand-500 transition">Touch Screens</Link></li>
-              <li><Link to="/support" className="hover:text-brand-500 transition">Support</Link></li>
-              <li><Link to="/about" className="hover:text-brand-500 transition">About CSE</Link></li>
+              <li><Link to="/hardware/scales" className="hover:text-brand-500 transition">Weighing Scales</Link></li>
+              <li><Link to="/hardware/cash-registers" className="hover:text-brand-500 transition">Cash Registers</Link></li>
+              <li><Link to="/hardware/digital-signage" className="hover:text-brand-500 transition">Digital Menu Signage</Link></li>
             </ul>
           </div>
 
           <div>
-            <h3 className="text-black font-bold text-lg mb-6">Quick Contact</h3>
+            <h3 className="text-black font-bold text-lg mb-6">Quick Links</h3>
+            <ul className="space-y-3 text-sm text-slate-500">
+              <li><Link to="/" className="hover:text-brand-500 transition">Home</Link></li>
+              <li><Link to="/about" className="hover:text-brand-500 transition">About CSE</Link></li>
+              <li><Link to="/support" className="hover:text-brand-500 transition">Support</Link></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-black font-bold text-lg mb-6">Contact Us</h3>
             <ul className="space-y-4 text-sm text-slate-500">
               <li className="flex items-start">
                 <MapPin size={18} className="mr-3 mt-0.5 shrink-0 text-brand-500" />

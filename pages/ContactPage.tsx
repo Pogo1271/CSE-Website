@@ -78,7 +78,7 @@ export const ContactPage: React.FC = () => {
                                     scrolling="no" 
                                     marginHeight={0} 
                                     marginWidth={0} 
-                                    src="https://maps.google.com/maps?q=Unit%202%20Tregrehan%20Workshops%2C%20Tregrehan%2C%20St%20Austell%2C%20Cornwall%2C%20PL25%203TQ&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                                    src="https://maps.google.com/maps?q=CSE%20Ltd%2050.3492521,-4.7542561&z=15&output=embed"
                                     className="absolute inset-0 grayscale group-hover:grayscale-0 transition-all duration-500"
                                     title="Office Location"
                                 ></iframe>
@@ -88,22 +88,28 @@ export const ContactPage: React.FC = () => {
                         {/* Right Column: Form */}
                         <div className="bg-white p-8 md:p-12 rounded-[2.5rem] shadow-xl border border-gray-100 h-fit lg:sticky lg:top-32">
                             <h2 className="text-3xl font-black text-black mb-8">Send a Message</h2>
-                            <form className="space-y-6">
+                            <form 
+                                name="contact" 
+                                method="POST" 
+                                data-netlify="true" 
+                                className="space-y-6"
+                            >
+                                <input type="hidden" name="form-name" value="contact" />
                                 <div>
                                     <label className="block text-sm font-bold text-gray-700 mb-2">Subject</label>
-                                    <input type="text" className="w-full px-6 py-4 rounded-xl border border-gray-200 focus:border-brand-500 focus:ring-4 focus:ring-brand-500/10 outline-none transition bg-offwhite font-medium" placeholder="What is this regarding?" />
+                                    <input type="text" name="subject" className="w-full px-6 py-4 rounded-xl border border-gray-200 focus:border-brand-500 focus:ring-4 focus:ring-brand-500/10 outline-none transition bg-offwhite font-medium" placeholder="What is this regarding?" required />
                                 </div>
                                 <div>
                                     <label className="block text-sm font-bold text-gray-700 mb-2">Name</label>
-                                    <input type="text" className="w-full px-6 py-4 rounded-xl border border-gray-200 focus:border-brand-500 focus:ring-4 focus:ring-brand-500/10 outline-none transition bg-offwhite font-medium" placeholder="Your full name" />
+                                    <input type="text" name="name" className="w-full px-6 py-4 rounded-xl border border-gray-200 focus:border-brand-500 focus:ring-4 focus:ring-brand-500/10 outline-none transition bg-offwhite font-medium" placeholder="Your full name" required />
                                 </div>
                                 <div>
                                     <label className="block text-sm font-bold text-gray-700 mb-2">Email</label>
-                                    <input type="email" className="w-full px-6 py-4 rounded-xl border border-gray-200 focus:border-brand-500 focus:ring-4 focus:ring-brand-500/10 outline-none transition bg-offwhite font-medium" placeholder="your@email.com" />
+                                    <input type="email" name="email" className="w-full px-6 py-4 rounded-xl border border-gray-200 focus:border-brand-500 focus:ring-4 focus:ring-brand-500/10 outline-none transition bg-offwhite font-medium" placeholder="your@email.com" required />
                                 </div>
                                 <div>
                                     <label className="block text-sm font-bold text-gray-700 mb-2">Message</label>
-                                    <textarea rows={6} className="w-full px-6 py-4 rounded-xl border border-gray-200 focus:border-brand-500 focus:ring-4 focus:ring-brand-500/10 outline-none transition bg-offwhite font-medium resize-none" placeholder="How can we help you?"></textarea>
+                                    <textarea name="message" rows={6} className="w-full px-6 py-4 rounded-xl border border-gray-200 focus:border-brand-500 focus:ring-4 focus:ring-brand-500/10 outline-none transition bg-offwhite font-medium resize-none" placeholder="How can we help you?" required></textarea>
                                 </div>
                                 <button type="submit" className="w-full bg-brand-500 text-white font-bold py-5 rounded-xl hover:bg-brand-600 transition shadow-lg shadow-brand-500/20 text-lg transform hover:-translate-y-0.5 flex items-center justify-center gap-2">
                                     Send Message <Send size={20} />
