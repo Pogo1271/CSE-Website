@@ -1,6 +1,7 @@
 import React from 'react';
 import { Scale, Check, ExternalLink, Award } from 'lucide-react';
 import { CTASection } from '../components/CTASection';
+import { scale } from 'motion';
 
 export const ScalesPage: React.FC = () => {
   return (
@@ -35,28 +36,50 @@ export const ScalesPage: React.FC = () => {
           </section>
 
           {/* Partners Section */}
-          <section className="text-center">
+          <section className="text-center overflow-hidden">
+             <style>{`
+               @keyframes marquee {
+                 0% { transform: translateX(0); }
+                 100% { transform: translateX(-50%); }
+               }
+               .animate-marquee {
+                 animation: marquee 15s linear infinite;
+               }
+             `}</style>
              <h3 className="text-sm font-black uppercase tracking-widest text-gray-400 mb-8">Working With Industry Leaders</h3>
-             <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
-                {/* Partner Logos */}
-                <div className="h-12 md:h-16 w-auto">
-                   <img src="/images/scales/cas_logo.png" alt="CAS" className="h-full object-contain" />
-                </div>
-                <div className="h-12 md:h-16 w-auto">
-                   <img src="/images/scales/digi_scales.png" alt="DIGI" className="h-full object-contain" />
-                </div>
-                <div className="h-12 md:h-16 w-auto">
-                   <img src="/images/scales/adam_equipment.png" alt="Adam Equipment" className="h-full object-contain" />
-                </div>
-                {/* New Partner Logos */}
-                <div className="h-12 md:h-16 w-auto">
-                   <img src="/images/scales/turier_logo.webp" alt="Partner 1" className="h-full object-contain mix-blend-multiply" />
-                </div>
-                <div className="h-12 md:h-16 w-auto">
-                   <img src="/images/scales/UWE-Logo.svg" alt="Partner 2" className="h-full object-contain mix-blend-multiply" />
-                </div>
+             
+             <div className="relative w-full max-w-4xl mx-auto overflow-hidden">
+                <div className="flex w-max animate-marquee items-center gap-16 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
+                   {/* First Set */}
+                   {[
+                     { src: "/images/scales/cas_logo.png", alt: "CAS" },
+                     { src: "/images/scales/digi_scales.png", alt: "DIGI" },
+                     { src: "/images/scales/adam_equipment3.png", alt: "Adam Equipment" },
+                     { src: "/images/scales/turier_logo.webp", alt: "Turier" },
+                     { src: "/images/scales/UWE-Logo.svg", alt: "UWE" },
+                   ].map((logo, idx) => (
+                      <div key={`logo-1-${idx}`} className="h-12 md:h-16 w-auto flex-shrink-0">
+                         <img src={logo.src} alt={logo.alt} className="h-full object-contain mix-blend-multiply" />
+                      </div>
+                   ))}
+                   
+                   {/* Duplicate Set for Loop */}
+                   {[
+                     { src: "/images/scales/cas_logo.png", alt: "CAS" },
+                     { src: "/images/scales/digi_scales.png", alt: "DIGI" },
+                     { src: "/images/scales/adam_equipment3.png", alt: "Adam Equipment" },
+                     { src: "/images/scales/turier_logo.webp", alt: "Turier" },
+                     { src: "/images/scales/UWE-Logo.svg", alt: "UWE" },
+                   ].map((logo, idx) => (
+                      <div key={`logo-2-${idx}`} className="h-12 md:h-16 w-auto flex-shrink-0">
+                         <img src={logo.src} alt={logo.alt} className="h-full object-contain mix-blend-multiply" />
+                      </div>
+                   ))}
+
+                  </div>
              </div>
-          </section>
+            </section>
+
 
           {/* Info Box */}
           <section className="bg-white rounded-[2.5rem] p-8 md:p-12 border border-gray-200 shadow-lg text-center">

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Phone, Mail, Download, HardDrive } from 'lucide-react';
-import { COMPANY_PHONE, COMPANY_EMAIL } from '../data';
+import { COMPANY_PHONE, COMPANY_EMAIL, SUPPORT_EMAIL } from '../data';
 import { CTASection } from '../components/CTASection';
 
 export const SupportPage: React.FC = () => {
@@ -102,8 +102,8 @@ export const SupportPage: React.FC = () => {
                              <p className="text-left text-sm text-gray-600 bg-gray-50 p-6 rounded-2xl border border-gray-100 mb-8 my-auto">
                                 <strong className="text-brand-500">Note:</strong> Emails may not be closely monitored out of hours. If urgent, ring and select <strong className="text-brand-500">Option 3</strong> (active support contract required).
                              </p>
-                             <a href={`mailto:${COMPANY_EMAIL}`} className="text-2xl font-bold text-black hover:text-brand-500 transition block break-all mt-auto">
-                                 {COMPANY_EMAIL}
+                             <a href={`mailto:${SUPPORT_EMAIL}`} className="text-2xl font-bold text-black hover:text-brand-500 transition block break-all mt-auto">
+                                 {SUPPORT_EMAIL}
                              </a>
                          </div>
                      </div>

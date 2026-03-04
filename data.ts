@@ -8,6 +8,9 @@ import { scale } from 'motion';
 export const COMPANY_ADDRESS = "Unit 2 Tregrehan Workshops, Tregrehan, St Austell, Cornwall, PL25 3TQ";
 export const COMPANY_PHONE = "0333 577 0108";
 export const COMPANY_EMAIL = "info@cornwallscalesltd.co.uk";
+export const SUPPORT_EMAIL = "support@cornwallscalesltd.co.uk";
+export const ENQUIRY_EMAIL = "enquires@cornwallscalesltd.co.uk";
+export const CONTACT_EMAIL = "hello@cornwallscalesltd.co.uk";
 export const LOGO_URL = "/CSE.png";
 export const FAVICON_URL = "/Favicon.png";
 
@@ -37,7 +40,7 @@ export const SOFTWARE_SOLUTIONS: SoftwareSolution[] = [
     logoText: 'Lightspeed',
     color: 'bg-[#E81C1C]',
     logoUrl: '/images/epos/Lightspeed_Logo.png',
-    partnerLogoUrl: '/images/epos/Lightspeed_PartnerLogo.png',
+    partnerLogoUrl: '/images/epos/lightspeed_partner.png',
     websiteUrl: 'https://www.lightspeedhq.com/uk/',
     features: [
       { title: 'Tableside Ordering', description: 'Take orders and payments directly at the table to speed up service.', icon: Smartphone },

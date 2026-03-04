@@ -135,7 +135,7 @@ export const HomePage: React.FC = () => {
     { 
       name: "Tremenheere Kitchen", 
       logoUrl: "/images/companies/tremenheere.png", 
-      testimonial: "Since working with Cornwall Scales and using the Access EPOS System, we’ve significantly improved how we collate and analyse our business data. Having clear, accessible reporting has helped us make more informed decisions and identify opportunities to improve performance across our shops.", 
+      testimonial: "The team at CSE were incredibly supportive from start to finish. They developed an EPOS solution that brought our Front of House and Café operations together seamlessly, making everything run far more efficiently. ", 
       author: "Area Manager" 
     },
 

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { HashRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { FAVICON_URL } from './data';
@@ -11,6 +11,7 @@ import { SolutionsPage } from './pages/SolutionsPage';
 import { HardwarePage } from './pages/HardwarePage';
 import { SupportPage } from './pages/SupportPage';
 import { ContactPage } from './pages/ContactPage';
+import { ThanksPage } from './pages/ThanksPage';
 import { PrivacyPolicyPage } from './pages/PrivacyPolicyPage';
 import { TermsOfUsePage } from './pages/TermsOfUsePage';
 import { RemoteSupportPolicyPage } from './pages/RemoteSupportPolicyPage';
@@ -34,7 +35,7 @@ const App: React.FC = () => {
   }, []);
 
   return (
-    <HashRouter>
+    <BrowserRouter>
       <ScrollToTop />
       <div className="font-sans text-slate-900 antialiased selection:bg-brand-200 selection:text-brand-900 flex flex-col min-h-screen">
         <Header />
@@ -49,6 +50,7 @@ const App: React.FC = () => {
             <Route path="/hardware/digital-signage" element={<DigitalSignagePage />} />
             <Route path="/support" element={<SupportPage />} />
             <Route path="/contact" element={<ContactPage />} />
+            <Route path="/thanks" element={<ThanksPage />} />
             <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
             <Route path="/terms-of-use" element={<TermsOfUsePage />} />
             <Route path="/remote-support-policy" element={<RemoteSupportPolicyPage />} />
@@ -56,7 +58,7 @@ const App: React.FC = () => {
         </main>
         <Footer />
       </div>
-    </HashRouter>
+    </BrowserRouter>
   );
 };
 

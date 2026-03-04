@@ -1,8 +1,26 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { MapPin, Phone, Mail, Send } from 'lucide-react';
-import { COMPANY_ADDRESS, COMPANY_PHONE, COMPANY_EMAIL } from '../data';
+import { COMPANY_ADDRESS, COMPANY_PHONE, COMPANY_EMAIL, ENQUIRY_EMAIL } from '../data';
 
 export const ContactPage: React.FC = () => {
+
+    const navigate = useNavigate();
+
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        const myForm = e.currentTarget;
+        const formData = new FormData(myForm);
+
+        fetch("/", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams(formData as any).toString(),
+        })
+            .then(() => navigate("/thanks"))
+            .catch((error) => alert(error));
+    };
+
     return (
         <div className="bg-white min-h-screen">
              {/* Standard Header Section */}
@@ -61,8 +79,8 @@ export const ContactPage: React.FC = () => {
                                         <div>
                                             <h3 className="text-xl font-bold text-black mb-2">Email Us</h3>
                                             <p className="text-gray-500 leading-relaxed text-lg mb-1">We'll respond as soon as possible.</p>
-                                            <a href={`mailto:${COMPANY_EMAIL}`} className="text-xl font-bold text-black hover:text-brand-500 transition block break-all">
-                                                {COMPANY_EMAIL}
+                                            <a href={`mailto:${ENQUIRY_EMAIL}`} className="text-xl font-bold text-black hover:text-brand-500 transition block break-all">
+                                                {ENQUIRY_EMAIL}
                                             </a>
                                         </div>
                                     </div>
@@ -91,10 +109,9 @@ export const ContactPage: React.FC = () => {
                             <form 
                                 name="contact" 
                                 method="POST" 
-                                data-netlify="true" 
+                                action="/contact.php" 
                                 className="space-y-6"
                             >
-                                <input type="hidden" name="form-name" value="contact" />
                                 <div>
                                     <label className="block text-sm font-bold text-gray-700 mb-2">Subject</label>
                                     <input type="text" name="subject" className="w-full px-6 py-4 rounded-xl border border-gray-200 focus:border-brand-500 focus:ring-4 focus:ring-brand-500/10 outline-none transition bg-offwhite font-medium" placeholder="What is this regarding?" required />
@@ -111,6 +128,10 @@ export const ContactPage: React.FC = () => {
                                     <label className="block text-sm font-bold text-gray-700 mb-2">Message</label>
                                     <textarea name="message" rows={6} className="w-full px-6 py-4 rounded-xl border border-gray-200 focus:border-brand-500 focus:ring-4 focus:ring-brand-500/10 outline-none transition bg-offwhite font-medium resize-none" placeholder="How can we help you?" required></textarea>
                                 </div>
+
+                                 {/* simple spam trap (bots often fill this) */}
+                                <input type="text" name="company" tabIndex="-1" autoComplete="off" className="hidden" />
+
                                 <button type="submit" className="w-full bg-brand-500 text-white font-bold py-5 rounded-xl hover:bg-brand-600 transition shadow-lg shadow-brand-500/20 text-lg transform hover:-translate-y-0.5 flex items-center justify-center gap-2">
                                     Send Message <Send size={20} />
                                 </button>
