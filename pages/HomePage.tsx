@@ -255,8 +255,8 @@ export const HomePage: React.FC = () => {
         <div className="container mx-auto px-4 relative z-10 flex-grow flex flex-col justify-center">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
             {/* Text Content */}
-            <div className="max-w-3xl lg:pl-4 lg:-mt-20">
-              <div className="inline-flex items-center bg-brand-50 border border-brand-100 text-brand-600 text-xs font-bold px-4 py-1.5 rounded-full mb-8 uppercase tracking-wider shadow-sm">
+            <div className="max-w-3xl lg:pl-4">
+              <div className="inline-flex items-center bg-brand-50 border border-brand-100 text-brand-600 text-xs font-bold px- py-1.5 rounded-full mb-8 uppercase tracking-wider shadow-sm">
                 <Star size={12} className="mr-2 text-brand-500 fill-brand-500" /> 
                 <span>South West Based. Powering Businesses Nationwide.</span>
               </div>
