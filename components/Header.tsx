@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { BrandLogo } from './BrandLogo';
 import { NAV_ITEMS } from '../data';
@@ -7,14 +7,37 @@ import { NAV_ITEMS } from '../data';
 export const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
+  const isLoggedIn = sessionStorage.getItem('engineerLoggedIn') === 'true';
 
   useEffect(() => {
     setIsOpen(false);
   }, [location]);
 
+  const handleLogout = () => {
+    sessionStorage.removeItem('engineerLoggedIn');
+    navigate('/login');
+  };
+
   return (
-    <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-100">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <header className="sticky top-0 z-50 flex flex-col">
+      {/* Top Utility Bar */}
+      <div className="bg-brand-500 py-1.5 md:py-2">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-end text-[10px] md:text-xs">
+          {isLoggedIn ? (
+            <button onClick={handleLogout} className="text-white/80 hover:text-white font-bold uppercase tracking-widest transition-colors text-xs">
+              Engineer Logout
+            </button>
+          ) : (
+            <Link to="/login" className="text-white/80 hover:text-white font-bold uppercase tracking-widest transition-colors">
+              Engineer Login
+            </Link>
+          )}
+        </div>
+      </div>
+      
+      <nav className="bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-100 relative">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20 items-center">
           <Link to="/" className="flex items-center group">
             <BrandLogo />
@@ -138,6 +161,7 @@ export const Header: React.FC = () => {
           </div>
         </div>
       )}
-    </nav>
+      </nav>
+    </header>
   );
 };

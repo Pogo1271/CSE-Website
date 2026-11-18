@@ -77,7 +77,7 @@ export const SupportPage: React.FC = () => {
                      </div>
 
                      {/* Contact Grid - Moved Below */}
-                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
                          <div className="bg-white p-12 rounded-[2.5rem] border border-gray-100 text-center hover:shadow-xl transition-all group flex flex-col h-full">
                              <div className="w-20 h-20 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-8 group-hover:scale-110 transition-transform">
                                  <Phone size={36} />
@@ -102,7 +102,7 @@ export const SupportPage: React.FC = () => {
                              <p className="text-left text-sm text-gray-600 bg-gray-50 p-6 rounded-2xl border border-gray-100 mb-8 my-auto">
                                 <strong className="text-brand-500">Note:</strong> Emails may not be closely monitored out of hours. If urgent, ring and select <strong className="text-brand-500">Option 3</strong> (active support contract required).
                              </p>
-                             <a href={`mailto:${SUPPORT_EMAIL}`} className="text-2xl font-bold text-black hover:text-brand-500 transition block break-all mt-auto">
+                             <a href="mailto:support@cornwallscalesltd.co.uk" className="text-xl xl:text-2xl font-bold text-black hover:text-brand-500 transition block break-all sm:break-words mt-auto">
                                  {SUPPORT_EMAIL}
                              </a>
                          </div>
